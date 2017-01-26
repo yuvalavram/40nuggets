@@ -1,0 +1,80 @@
+    body {
+  font-family: Arial;
+  font-size: 14px;
+}
+
+a {
+  color: #f1622a;
+  cursor: pointer;
+}
+
+label {
+  font-weight: bold;  
+}
+
+h1 {
+  margin: 10px 0 30px;
+  font-size: 20px;
+}
+
+a:hover {
+  color: #f1622a;
+  text-decoration: underline;
+}
+
+input[type="text"] {
+  width: 300px;
+  height: 24px;
+  padding: 5px;
+  border: 1px solid grey;
+  background-color: transparent;
+}
+
+button {
+  border: none;
+  background-color: #f1622a;
+  color: white;
+  padding: 5px 15px;
+  height: 40px;
+  border-radius: 5px;
+}
+
+.menu {
+  width: 200px;
+  height: 450px;
+  float: left;
+  border-right: 3px solid #f1622a;
+}
+
+.menu__button {
+  font-weight: bold;  
+  padding: 10px;
+  cursor: pointer;
+}
+
+.menu__button--active {
+  background-color: #f1622a;
+  color: white;
+}
+
+.content {
+  position: relative;
+  float: left;
+  height: 450px;
+  padding: 0 50px;
+}
+
+.detail-group,
+.field-group {
+  margin: 20px 0;
+}
+
+.field-group label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 10px;
+}

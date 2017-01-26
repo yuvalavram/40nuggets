@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <script src="http://code.angularjs.org/1.2.13/angular.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular-route.js"></script>
+
+  <link rel="stylesheet" href="styles.css">
+  <title>40 nuggets task</title>
+
+
+  
+</head>
+
+<body ng-app="mainApp">
+
+  <div class="menu">
+	  <div ng-click="changeView('general')" 
+		   class="menu__button menu__button--active">GENERAL</div>
+	  <div ng-click="changeView('integrations')" 
+		   class="menu__button">INTEGRATIONS</div>
+  </div>
+  
+  
+	<div class="content" ng-view>
+
+	</div>
+
+<script>
+
+
+var app = angular.module("mainApp", ["ngRoute"]);
+app.config(function($routeProvider) {
+    $routeProvider
+    .when("/", {
+        templateUrl : "general.html"
+    })
+    .when("/red", {
+        templateUrl : "red.htm"
+    })
+    .when("/green", {
+        templateUrl : "green.htm"
+    })
+    .when("/blue", {
+        templateUrl : "blue.htm"
+    });
+});
+
+</script>
+
+</body></html>

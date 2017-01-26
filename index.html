@@ -12,13 +12,12 @@
 
 <body ng-app="mainApp">
 
-  <div class="menu">
+  <div ng-controller="menuCtrl" class="menu">
 	  <div ng-click="changeView('general')" 
 		   class="menu__button menu__button--active">GENERAL</div>
 	  <div ng-click="changeView('integrations')" 
 		   class="menu__button">INTEGRATIONS</div>
   </div>
-  
   
 	<div class="content" ng-view>
 
@@ -33,15 +32,18 @@ app.config(function($routeProvider) {
     .when("/", {
         templateUrl : "general.html"
     })
-    .when("/red", {
-        templateUrl : "red.htm"
+    .when("/general", {
+        templateUrl : "general.html"
     })
-    .when("/green", {
-        templateUrl : "green.htm"
+    .when("/integrations", {
+        templateUrl : "integrations.html"
     })
-    .when("/blue", {
-        templateUrl : "blue.htm"
-    });
+});
+
+app.controller('menuCtrl', function($scope) {
+	$scope.changeView = function(view){
+		$location.path(view); 
+	}
 });
 
 </script>

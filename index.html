@@ -1,66 +1,59 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<!-- FAVICON  -->
-	<link rel="icon" type="image/png" href="favicon.png">
     <script src="angular.js"></script>
     <script src="angular-route.js"></script>
-
-  <link rel="stylesheet" href="styles.css">
-  <title>40 nuggets task</title>
-
-
-  
+	<link rel="stylesheet" href="styles.css">
+	
+	<title>40 nuggets task</title>
+	<link rel="icon" type="image/png" href="favicon.png">
 </head>
 
 <body ng-app="mainApp">
 
-  <div ng-controller="menuCtrl" class="menu">
-  111{$route.current.activetab}}222
+	<div ng-controller="menuCtrl" class="menu">
   
-	  <div ng-click="changeView('general')" 
-		   class="menu__button"
-		   ng-class="{'menu__button--active': $route.current.activetab == 'general'}">
-			GENERAL
+		<div ng-click="changeView('general')" 
+			 class="menu__button"
+			 ng-class="{'menu__button--active': $route.current.activetab == 'general'}">
+				GENERAL
 		</div>
-	  <div ng-click="changeView('integrations')" 
-		   class="menu__button"
-		   ng-class="{'menu__button--active': $route.current.activetab == 'integrations'}">INTEGRATIONS</div>
-  </div>
+		<div ng-click="changeView('integrations')" 
+			 class="menu__button"
+		     ng-class="{'menu__button--active': $route.current.activetab == 'integrations'}">
+				INTEGRATIONS
+		</div>
+	</div>
   
 	<div class="content" ng-view>
-
 	</div>
 
-<script>
+	<script>
+		var app = angular.module("mainApp", ["ngRoute"]);
+		app.config(function($routeProvider) {
+			$routeProvider
+			.when("/", {
+				templateUrl : "general.html",
+				activetab: 'general'
+			})
+			.when("/general", {
+				templateUrl : "general.html",
+				activetab: 'general'
+			})
+			.when("/integrations", {
+				templateUrl : "integrations.html",
+				activetab: 'integrations'
+			})
+		});
 
+		app.controller('menuCtrl', ['$scope', '$route', '$location',  function($scope, $route, $location){
+			$scope.$route = $route;
+			$scope.changeView = function(view){
+				$location.path(view); 
+			}
+		}]);
 
-var app = angular.module("mainApp", ["ngRoute"]);
-app.config(function($routeProvider) {
-    $routeProvider
-    .when("/", {
-        templateUrl : "general.html",
-		activetab: 'general'
-    })
-    .when("/general", {
-        templateUrl : "general.html",
-		activetab: 'general'
-    })
-    .when("/integrations", {
-        templateUrl : "integrations.html",
-		activetab: 'integrations'
-    })
-});
-
-app.controller('menuCtrl', ['$scope', '$route', '$location',  function($scope, $route, $location){
-	$scope.$route = $route;
-	alert($scope.$route.current.activetab)
-	$scope.changeView = function(view){
-		$location.path(view); 
-	}
-}]);
-
-</script>
+	</script>
 
 </body>
 </html>

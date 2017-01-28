@@ -32,3 +32,6 @@ app.controller('generalCtrl', ['$scope',  function($scope){
 	}
 }]);
 
+app.controller('integrationsCtrl', ['$scope',  function($scope){
+
+}]);

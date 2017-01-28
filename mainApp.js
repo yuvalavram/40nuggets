@@ -4,18 +4,15 @@ app.config(function($routeProvider) {
 	$routeProvider
 	.when("/", {
 		templateUrl : "general.html",
-		activetab: 'general',
-		controller: 'generalCtrl'
+		activetab: 'general'
 	})
 	.when("/general", {
 		templateUrl : "general.html",
-		activetab: 'general',
-		controller: 'generalCtrl'
+		activetab: 'general'
 	})
 	.when("/integrations", {
 		templateUrl : "integrations.html",
-		activetab: 'integrations',
-		controller: 'integrationsCtrl'		
+		activetab: 'integrations'	
 	})
 });
 
@@ -26,13 +23,3 @@ app.controller('menuCtrl', ['$scope', '$route', '$location',  function($scope, $
 	}
 }]);
 
-app.controller('generalCtrl', ['$scope',  function($scope){
-	console.log('generalCtrl');
-	$scope.saveClicked = function(){
-		alert('save clicked');
-	}
-}]);
-
-app.controller('integrationsCtrl', ['$scope',  function($scope){
-	console.log('integrationsCtrl');
-}]);

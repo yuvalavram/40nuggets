@@ -17,9 +17,13 @@
 
   <div ng-controller="menuCtrl" class="menu">
 	  <div ng-click="changeView('general')" 
-		   class="menu__button menu__button--active">GENERAL</div>
+		   class="menu__button"
+		   ng-class="{'menu__button--active': $route.current.activetab == 'general'}">
+			GENERAL
+		</div>
 	  <div ng-click="changeView('integrations')" 
-		   class="menu__button">INTEGRATIONS</div>
+		   class="menu__button"
+		   ng-class="{'menu__button--active': $route.current.activetab == 'integrations'}">INTEGRATIONS</div>
   </div>
   
 	<div class="content" ng-view>
@@ -33,22 +37,26 @@ var app = angular.module("mainApp", ["ngRoute"]);
 app.config(function($routeProvider) {
     $routeProvider
     .when("/", {
-        templateUrl : "general.html"
+        templateUrl : "general.html",
+		activetab: 'general'
     })
     .when("/general", {
-        templateUrl : "general.html"
+        templateUrl : "general.html",
+		activetab: 'general'
     })
     .when("/integrations", {
-        templateUrl : "integrations.html"
+        templateUrl : "integrations.html",
+		activetab: 'integrations'
     })
 });
 
-app.controller('menuCtrl', ['$scope', '$location',  function($scope, $location)
+app.controller('menuCtrl', ['$scope', '$location',  function($scope, $location){
 	$scope.changeView = function(view){
 		$location.path(view); 
 	}
-});
+}]);
 
 </script>
 
-</body></html>
+</body>
+</html>

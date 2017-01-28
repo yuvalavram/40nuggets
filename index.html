@@ -1,62 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<!-- FAVICON  -->
-	<link rel="icon" type="image/png" href="favicon.png">
     <script src="angular.js"></script>
     <script src="angular-route.js"></script>
-
-  <link rel="stylesheet" href="styles.css">
-  <title>40 nuggets task</title>
-
-
-  
+	<link rel="stylesheet" href="styles.css">
+	
+	<title>40 nuggets task</title>
+	<link rel="icon" type="image/png" href="favicon.png">
 </head>
 
 <body ng-app="mainApp">
 
-  <div ng-controller="menuCtrl" class="menu">
-	  <div ng-click="changeView('general')" 
-		   class="menu__button"
-		   ng-class="{'menu__button--active': $route.current.activetab == 'general'}">
-			GENERAL
+	<div ng-controller="menuCtrl" class="menu">
+  
+		<div ng-click="changeView('general')" 
+			 class="menu__button"
+			 ng-class="{'menu__button--active': $route.current.activetab == 'general'}">
+				GENERAL
 		</div>
-	  <div ng-click="changeView('integrations')" 
-		   class="menu__button"
-		   ng-class="{'menu__button--active': $route.current.activetab == 'integrations'}">INTEGRATIONS</div>
-  </div>
+		<div ng-click="changeView('integrations')" 
+			 class="menu__button"
+		     ng-class="{'menu__button--active': $route.current.activetab == 'integrations'}">
+				INTEGRATIONS
+		</div>
+	</div>
   
 	<div class="content" ng-view>
-
 	</div>
 
-<script>
-
-
-var app = angular.module("mainApp", ["ngRoute"]);
-app.config(function($routeProvider) {
-    $routeProvider
-    .when("/", {
-        templateUrl : "general.html",
-		activetab: 'general'
-    })
-    .when("/general", {
-        templateUrl : "general.html",
-		activetab: 'general'
-    })
-    .when("/integrations", {
-        templateUrl : "integrations.html",
-		activetab: 'integrations'
-    })
-});
-
-app.controller('menuCtrl', ['$scope', '$location',  function($scope, $location){
-	$scope.changeView = function(view){
-		$location.path(view); 
-	}
-}]);
-
-</script>
+	<script src="mainApp.js"></script>
 
 </body>
 </html>

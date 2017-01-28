@@ -1,4 +1,4 @@
-    body {
+body {
   font-family: Arial;
   font-size: 14px;
 }
@@ -8,42 +8,15 @@ a {
   cursor: pointer;
 }
 
-label {
-  font-weight: bold;  
-}
-
-h1 {
-  margin: 10px 0 30px;
-  font-size: 20px;
-}
-
 a:hover {
-  color: #f1622a;
   text-decoration: underline;
-}
-
-input[type="text"] {
-  width: 300px;
-  height: 24px;
-  padding: 5px;
-  border: 1px solid grey;
-  background-color: transparent;
-}
-
-button {
-  border: none;
-  background-color: #f1622a;
-  color: white;
-  padding: 5px 15px;
-  height: 40px;
-  border-radius: 5px;
 }
 
 .menu {
   width: 200px;
   height: 450px;
   float: left;
-  border-right: 3px solid #f1622a;
+  border-right: 4px solid #f1622a;
 }
 
 .menu__button {
@@ -61,18 +34,42 @@ button {
   position: relative;
   float: left;
   height: 450px;
+  width: 600px;
   padding: 0 50px;
+}
+
+.content__button {
+  border: none;
+  background-color: #f1622a;
+  color: white;
+  padding: 5px 15px;
+  height: 40px;
+  border-radius: 5px;
+  font-weight: bold;  
 }
 
 .detail-group,
 .field-group {
-  margin: 20px 0;
-  width: 600px;
+  margin: 30px 0;
+  width: 550px;
+}
+
+.detail-group label,
+.field-group label{
+  font-weight: bold;  
 }
 
 .field-group label {
   display: block;
   margin-bottom: 10px;
+}
+
+.field-group input[type="text"] {
+  width: 400px;
+  height: 24px;
+  padding: 5px;
+  border: 1px solid grey;
+  background-color: transparent;
 }
 
 .footer {

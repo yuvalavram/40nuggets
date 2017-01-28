@@ -34,8 +34,7 @@ a:hover {
   position: relative;
   float: left;
   height: 450px;
-  width: 600px;
-  padding: 0 50px;
+  padding-left: 50px;
 }
 
 .content__button {

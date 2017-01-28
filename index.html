@@ -18,12 +18,12 @@
   <div ng-controller="menuCtrl" class="menu">
 	  <div ng-click="changeView('general')" 
 		   class="menu__button"
-		   ng-class="{menu__button--active: $route.current.activetab == 'general'}">
+		   ng-class="{'menu__button--active': $route.current.activetab == 'general'}">
 			GENERAL
 		</div>
 	  <div ng-click="changeView('integrations')" 
 		   class="menu__button"
-		   ng-class="{menu__button--active: $route.current.activetab == 'integrations'}">INTEGRATIONS</div>
+		   ng-class="{'menu__button--active': $route.current.activetab == 'integrations'}">INTEGRATIONS</div>
   </div>
   
 	<div class="content" ng-view>

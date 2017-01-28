@@ -1,17 +1,21 @@
 var app = angular.module("mainApp", ["ngRoute"]);
+
 app.config(function($routeProvider) {
 	$routeProvider
 	.when("/", {
 		templateUrl : "general.html",
-		activetab: 'general'
+		activetab: 'general',
+		controller: 'generalCtrl'
 	})
 	.when("/general", {
 		templateUrl : "general.html",
-		activetab: 'general'
+		activetab: 'general',
+		controller: 'generalCtrl'
 	})
 	.when("/integrations", {
 		templateUrl : "integrations.html",
-		activetab: 'integrations'
+		activetab: 'integrations',
+		controller: 'integrationsCtrl'		
 	})
 });
 
@@ -21,3 +25,10 @@ app.controller('menuCtrl', ['$scope', '$route', '$location',  function($scope, $
 		$location.path(view); 
 	}
 }]);
+
+app.controller('generalCtrl', ['$scope',  function($scope){
+	$scope.saveClicked = function(){
+		alert('save clicked');
+	}
+}]);
+

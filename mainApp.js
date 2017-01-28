@@ -27,11 +27,12 @@ app.controller('menuCtrl', ['$scope', '$route', '$location',  function($scope, $
 }]);
 
 app.controller('generalCtrl', ['$scope',  function($scope){
+	console.log('generalCtrl');
 	$scope.saveClicked = function(){
 		alert('save clicked');
 	}
 }]);
 
 app.controller('integrationsCtrl', ['$scope',  function($scope){
-
+	console.log('integrationsCtrl');
 }]);

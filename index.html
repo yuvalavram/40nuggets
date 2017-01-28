@@ -54,6 +54,7 @@ app.config(function($routeProvider) {
 
 app.controller('menuCtrl', ['$scope', '$route', '$location',  function($scope, $route, $location){
 	$scope.$route = $route;
+	alert($scope.$route.current.activetab)
 	$scope.changeView = function(view){
 		$location.path(view); 
 	}

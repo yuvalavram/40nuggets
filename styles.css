@@ -67,7 +67,7 @@ button {
 .detail-group,
 .field-group {
   margin: 20px 0;
-  position: fixed;
+  width: 300px;
 }
 
 .field-group label {

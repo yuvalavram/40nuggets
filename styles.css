@@ -1,21 +1,8 @@
-    body {
+body {
   font-family: Arial;
   font-size: 14px;
 }
 
-a {
-  color: #f1622a;
-  cursor: pointer;
-}
-
-label {
-  font-weight: bold;  
-}
-
-h1 {
-  margin: 10px 0 30px;
-  font-size: 20px;
-}
 
 a:hover {
   color: #f1622a;
@@ -43,7 +30,7 @@ button {
   width: 200px;
   height: 450px;
   float: left;
-  border-right: 3px solid #f1622a;
+  border-right: 4px solid #f1622a;
 }
 
 .menu__button {
@@ -71,8 +58,19 @@ button {
 }
 
 .field-group label {
-  display: block;
-  margin-bottom: 10px;
+  font-weight: bold;  
+}
+
+
+.field-group a {
+  color: #f1622a;
+  cursor: pointer;
+  font-weight: normal
+}
+
+
+.field-group span {
+  font-weight: normal;  
 }
 
 .footer {
